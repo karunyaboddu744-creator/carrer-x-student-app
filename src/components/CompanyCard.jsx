@@ -1,0 +1,3 @@
+import React from 'react';
+import {ArrowUpRight,CheckCircle2} from 'lucide-react';
+export default function CompanyCard({company}){return <div className="company-card"><div className="company-head"><div className="company-logo">{company.logo}</div><div><h3>{company.name}</h3><p>{company.role}</p></div><ArrowUpRight size={18} className="muted"/></div><div className="company-score"><div><span>Readiness</span><strong>{company.score}%</strong></div><div className="bar"><i style={{width:`${company.score}%`}}/></div></div><div className="skill-tags">{company.skills.map(s=><span key={s}><CheckCircle2 size={12}/>{s}</span>)}</div></div>}

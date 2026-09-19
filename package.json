@@ -1,0 +1,10 @@
+{
+  "name":"carrer-x-student-desktop",
+  "version":"1.0.0",
+  "description":"CARRER-X Student desktop application",
+  "main":"electron/main.cjs",
+  "type":"module",
+  "scripts":{"dev":"vite","build":"vite build","desktop":"electron .","dist":"electron-builder --win portable nsis"},
+  "dependencies":{"@vitejs/plugin-react":"latest","bcryptjs":"^2.4.3","cors":"^2.8.5","dotenv":"^16.4.7","express":"^4.21.2","jsonwebtoken":"^9.0.2","lucide-react":"latest","react":"latest","react-dom":"latest","react-router-dom":"latest","recharts":"latest","uuid":"^11.0.5","vite":"latest"},
+  "devDependencies":{"electron":"^38.1.0","electron-builder":"^26.0.12"}
+}

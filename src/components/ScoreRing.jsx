@@ -1,0 +1,2 @@
+import React from 'react';
+export default function ScoreRing({score=76,size=150,label='READY'}){const r=52,c=2*Math.PI*r,d=(score/100)*c;return <div className="score-ring" style={{width:size,height:size}}><svg viewBox="0 0 120 120"><circle className="ring-bg" cx="60" cy="60" r={r}/><circle className="ring-value" cx="60" cy="60" r={r} strokeDasharray={`${d} ${c-d}`}/></svg><div className="ring-center"><strong>{score}<small>%</small></strong><span>{label}</span></div></div>}
