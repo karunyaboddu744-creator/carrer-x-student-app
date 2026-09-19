@@ -1,6 +1,8 @@
-# CARRER-X Student — Windows Desktop Application
+# carrer-x-student-app
 
-This package combines the supplied Student frontend and Student backend into one Electron desktop application.
+CARRER-X Student App — an AI-powered career readiness platform that helps students assess skills, identify skill gaps, complete real-world challenges, track progress, and build verified career evidence for industry readiness.
+
+This package combines the Student frontend and Student backend into one Electron desktop application.
 
 ## What is connected
 - Local Express backend starts automatically inside the desktop app.
