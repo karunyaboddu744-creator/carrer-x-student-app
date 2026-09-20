@@ -1,8 +1,137 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": "3f226db6-66e4-493c-9a96-16c243c814af",
+      "fullName": "Test Student",
+      "email": "test.student@example.com",
+      "passwordHash": "$2a$12$fHvs/QkjtTlpDwj8FpL1FOqHEXMOzEuRLepcIpyf9t3CNA35KQF/6",
+      "college": "NRI",
+      "degree": "ECE",
+      "graduationYear": "2027",
+      "primaryCareerInterest": "Software Engineering",
+      "interests": [],
+      "profile": {
+        "completed": false,
+        "bio": "",
+        "location": "",
+        "phone": "",
+        "github": "",
+        "linkedin": "",
+        "portfolio": ""
+      },
+      "skills": [],
+      "readiness": {
+        "score": 0,
+        "level": "Foundation"
+      },
+      "createdAt": "2026-09-19T19:18:22.716Z",
+      "updatedAt": "2026-09-19T19:18:22.716Z"
+    },
+    {
+      "id": "8647a894-df1d-429a-9e5c-55b2c51b0f46",
+      "fullName": "Asha Rao",
+      "email": "asha.rao@example.com",
+      "passwordHash": "$2a$12$lWejXZ34XDbdr1qwQSe0..iBQ21jkfkHL6azcnj.3UUjhLKf/Sby.",
+      "college": "NRI Institute of Technology",
+      "degree": "Electronics and Communication",
+      "graduationYear": "2027",
+      "primaryCareerInterest": "Software Engineering",
+      "interests": [],
+      "profile": {
+        "completed": false,
+        "bio": "",
+        "location": "",
+        "phone": "",
+        "github": "",
+        "linkedin": "",
+        "portfolio": ""
+      },
+      "skills": [],
+      "readiness": {
+        "score": 10,
+        "level": "Foundation"
+      },
+      "createdAt": "2026-09-19T19:20:19.424Z",
+      "updatedAt": "2026-09-19T19:20:19.424Z"
+    },
+    {
+      "id": "78a7f076-8d9b-4352-9e5b-21c7ce9fb900",
+      "fullName": "karunya boddu",
+      "email": "karunyaboddu744@gmail.com",
+      "passwordHash": "$2a$12$RRg0a9TluhmWo02zq7r.OOR6Ex7pc7BSiTgubfubgQe2jb5L.IoB6",
+      "college": "NRI INSTITUTE OF TECHNOLOGY ",
+      "degree": "B.Tech",
+      "graduationYear": "2027",
+      "primaryCareerInterest": "Software Engineering",
+      "interests": [],
+      "profile": {
+        "completed": false,
+        "bio": "",
+        "location": "",
+        "phone": "",
+        "github": "",
+        "linkedin": "",
+        "portfolio": ""
+      },
+      "skills": [],
+      "readiness": {
+        "score": 10,
+        "level": "Foundation"
+      },
+      "createdAt": "2026-09-20T08:20:39.311Z",
+      "updatedAt": "2026-09-20T08:20:39.311Z"
+    }
+  ],
   "assessments": [],
   "projects": [],
-  "challenges": [],
+  "challenges": [
+    {
+      "id": "02242b70-95d0-4143-b9ef-0c28d8172e7a",
+      "title": "Build a REST API",
+      "category": "Backend Systems",
+      "difficulty": "Intermediate",
+      "skills": [
+        "Node.js",
+        "Express",
+        "REST API"
+      ],
+      "points": 100
+    },
+    {
+      "id": "3c6e88ed-2ffd-4512-b037-cd1361cc4376",
+      "title": "DSA Problem Solver",
+      "category": "Core CS",
+      "difficulty": "Intermediate",
+      "skills": [
+        "Data Structures",
+        "Algorithms"
+      ],
+      "points": 100
+    },
+    {
+      "id": "7c46257c-f7d7-417e-b6b2-b8189c0218d5",
+      "title": "AI Data Analysis",
+      "category": "Data & AI",
+      "difficulty": "Advanced",
+      "skills": [
+        "Python",
+        "Pandas",
+        "Machine Learning"
+      ],
+      "points": 150
+    },
+    {
+      "id": "131a27c0-c912-4b31-811d-7cb02fdccc4d",
+      "title": "System Design Challenge",
+      "category": "Architecture",
+      "difficulty": "Advanced",
+      "skills": [
+        "System Design",
+        "Architecture"
+      ],
+      "points": 200
+    }
+  ],
   "progress": [],
   "activity": []
 }

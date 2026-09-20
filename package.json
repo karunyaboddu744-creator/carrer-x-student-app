@@ -1,10 +1,60 @@
 {
-  "name":"carrer-x-student-desktop",
-  "version":"1.0.0",
-  "description":"CARRER-X Student desktop application",
-  "main":"electron/main.cjs",
-  "type":"module",
-  "scripts":{"dev":"vite","build":"vite build","desktop":"electron .","dist":"electron-builder --win portable nsis"},
-  "dependencies":{"@vitejs/plugin-react":"latest","bcryptjs":"^2.4.3","cors":"^2.8.5","dotenv":"^16.4.7","express":"^4.21.2","jsonwebtoken":"^9.0.2","lucide-react":"latest","react":"latest","react-dom":"latest","react-router-dom":"latest","recharts":"latest","uuid":"^11.0.5","vite":"latest"},
-  "devDependencies":{"electron":"^38.1.0","electron-builder":"^26.0.12"}
+  "name": "carrer-x-student-app",
+  "version": "1.0.0",
+  "description": "CARRER-X Student application",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:server": "node backend/index.cjs",
+    "dev:all": "concurrently -k \"npm run dev:server\" \"npm run dev\"",
+    "start": "node backend/index.cjs",
+    "build": "vite build --base /",
+    "build:desktop": "vite build --base ./",
+    "desktop": "npm run build:desktop && electron .",
+    "dist": "npm run build:desktop && electron-builder --win portable nsis"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest",
+    "recharts": "latest",
+    "uuid": "^11.0.5",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "electron": "^38.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "ai.careersync.student",
+    "productName": "CARRER-X Student",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "backend/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": ["nsis", "portable"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
 }

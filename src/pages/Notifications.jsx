@@ -1,3 +1,38 @@
-import React from 'react';import SectionHeader from '../components/SectionHeader';import {Bell,CheckCheck,ArrowRight} from 'lucide-react';
-const notes=[['Your System Design roadmap is ready','AI generated a 7-day learning sprint based on your latest skill gap.','12 min ago'],['You crossed 75% readiness','You are now above the readiness milestone for your current target role.','2 hours ago'],['New company assessment available','A fresh Software Engineer assessment has been added to your preparation queue.','Yesterday'],['React skill verified','Your recent assessment verified React at 74%.','2 days ago']];
-export default function Notifications(){return <><SectionHeader eyebrow="UPDATES" title="Notifications" description="Stay on top of your assessments, skills and career plan." action={<button className="secondary-btn"><CheckCheck size={16}/> Mark all read</button>}/><div className="panel notifications">{notes.map((n,i)=><div className={`notification ${i<2?'unread':''}`} key={n[0]}><div className="notification-icon"><Bell size={17}/></div><div><b>{n[0]}</b><p>{n[1]}</p><span>{n[2]}</span></div>{i<3&&<ArrowRight className="notif-arrow" size={17}/>}</div>)}</div></>}
+import React, { useEffect, useState } from 'react';
+import SectionHeader from '../components/SectionHeader';
+import { Bell, CheckCheck, ArrowRight } from 'lucide-react';
+import { api } from '../api';
+
+export default function Notifications() {
+  const [notes, setNotes] = useState([]);
+  const [err, setErr] = useState('');
+
+  useEffect(() => {
+    api('/api/notifications').then((d) => setNotes(d.notifications || [])).catch((e) => setErr(e.message));
+  }, []);
+
+  return (
+    <>
+      <SectionHeader
+        eyebrow="UPDATES"
+        title="Notifications"
+        description="Stay on top of your assessments, skills and career plan."
+        action={<button className="secondary-btn" onClick={() => setNotes(notes.map((n) => ({ ...n, unread: false })))}><CheckCheck size={16} /> Mark all read</button>}
+      />
+      {err && <div className="panel"><p>{err}</p></div>}
+      <div className="panel notifications">
+        {notes.map((n) => (
+          <div className={`notification ${n.unread ? 'unread' : ''}`} key={n.id}>
+            <div className="notification-icon"><Bell size={17} /></div>
+            <div>
+              <b>{n.title}</b>
+              <p>{n.body}</p>
+              <span>{n.createdAt ? new Date(n.createdAt).toLocaleString() : ''}</span>
+            </div>
+            <ArrowRight className="notif-arrow" size={17} />
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
